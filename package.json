@@ -40,6 +40,6 @@
     "test": "mocha",
     "postinstall": "gulp",
     "start": "node ./bin/slackin",
-    "forever": "CAS_SERVICE='http://www.sfu.ca/itservices/slack/login' forever start -a --uid slackin bin/slackin -s -p 3030 -h nodejs2.tier2.sfu.ca -P '/itservices/slack/' sfuits xoxp-2525974874-17902127063-17896648436-ed8ca20ec5"
+    "forever": "source .env && forever start -a --uid slackin bin/slackin -s -p 3030 -h $APP_HOSTNAME -P $MOUNT_PATH $SLACK_TEAM $SLACK_TOKEN"
   }
 }
